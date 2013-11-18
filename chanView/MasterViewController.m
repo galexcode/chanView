@@ -10,6 +10,9 @@
 
 #import "DetailViewController.h"
 
+#import "CVBoard.h"
+#import "CVBoardList.h"
+
 @interface MasterViewController () {
     NSMutableArray *_objects;
 }
@@ -30,11 +33,16 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    self.navigationItem.leftBarButtonItem = self.editButtonItem;
+    //self.navigationItem.leftBarButtonItem = self.editButtonItem;
+    self.boards = [[CVBoardList alloc] init];
 
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-    self.navigationItem.rightBarButtonItem = addButton;
+    //UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
+   // self.navigationItem.rightBarButtonItem = addButton;
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    [refreshControl addTarget:[self.splitViewController.viewControllers firstObject] action:@selector(reloadData) forControlEvents:UIControlEventValueChanged];
+    self.refreshControl = refreshControl;
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -62,15 +70,15 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _objects.count;
+    return [[self.boards boardList] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ThreadCell" forIndexPath:indexPath];
 
-    NSDate *object = _objects[indexPath.row];
-    cell.textLabel.text = [object description];
+    CVBoard *board = [[self.boards boardList] objectAtIndex:indexPath.row];
+    cell.textLabel.text = [board title];
     return cell;
 }
 
@@ -109,7 +117,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-        NSDate *object = _objects[indexPath.row];
+        NSURL *object = [[self.boards.boardList objectAtIndex:(NSUInteger)indexPath.row] url];
+        NSLog(@"%@", [object description]);
         self.detailViewController.detailItem = object;
     }
 }
@@ -118,7 +127,8 @@
 {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSDate *object = _objects[indexPath.row];
+        NSURL *object = [[self.boards.boardList objectAtIndex:(NSUInteger)indexPath.row] url];
+        NSLog(@"%@", [object description]);
         [[segue destinationViewController] setDetailItem:object];
     }
 }

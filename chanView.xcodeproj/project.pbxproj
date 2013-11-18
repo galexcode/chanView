@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C839BC68B7E417AB016FEF1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F85CD59FC9D4FAD83A8BFE2 /* libPods.a */; };
 		BA73721418340677002489C3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA73721318340677002489C3 /* Foundation.framework */; };
 		BA73721618340677002489C3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA73721518340677002489C3 /* CoreGraphics.framework */; };
 		BA73721818340677002489C3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA73721718340677002489C3 /* UIKit.framework */; };
@@ -23,6 +24,9 @@
 		BA73723B18340677002489C3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA73721718340677002489C3 /* UIKit.framework */; };
 		BA73724318340677002489C3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BA73724118340677002489C3 /* InfoPlist.strings */; };
 		BA73724518340677002489C3 /* chanViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BA73724418340677002489C3 /* chanViewTests.m */; };
+		BA737251183409FD002489C3 /* CVBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = BA737250183409FD002489C3 /* CVBoard.m */; };
+		BA73725418344656002489C3 /* CVThread.m in Sources */ = {isa = PBXBuildFile; fileRef = BA73725318344656002489C3 /* CVThread.m */; };
+		BA740F10183992A500E30909 /* CVBoardList.m in Sources */ = {isa = PBXBuildFile; fileRef = BA740F0F183992A500E30909 /* CVBoardList.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4F85CD59FC9D4FAD83A8BFE2 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3BB9ECD0B6B45A1840A7AB0 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		BA73721018340677002489C3 /* chanView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chanView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA73721318340677002489C3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BA73721518340677002489C3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -58,6 +64,12 @@
 		BA73724018340677002489C3 /* chanViewTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "chanViewTests-Info.plist"; sourceTree = "<group>"; };
 		BA73724218340677002489C3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BA73724418340677002489C3 /* chanViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = chanViewTests.m; sourceTree = "<group>"; };
+		BA73724F183409FD002489C3 /* CVBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVBoard.h; sourceTree = "<group>"; };
+		BA737250183409FD002489C3 /* CVBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVBoard.m; sourceTree = "<group>"; };
+		BA73725218344656002489C3 /* CVThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVThread.h; sourceTree = "<group>"; };
+		BA73725318344656002489C3 /* CVThread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVThread.m; sourceTree = "<group>"; };
+		BA740F0E183992A500E30909 /* CVBoardList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVBoardList.h; sourceTree = "<group>"; };
+		BA740F0F183992A500E30909 /* CVBoardList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVBoardList.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +80,7 @@
 				BA73721618340677002489C3 /* CoreGraphics.framework in Frameworks */,
 				BA73721818340677002489C3 /* UIKit.framework in Frameworks */,
 				BA73721418340677002489C3 /* Foundation.framework in Frameworks */,
+				2C839BC68B7E417AB016FEF1 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +104,7 @@
 				BA73723E18340677002489C3 /* chanViewTests */,
 				BA73721218340677002489C3 /* Frameworks */,
 				BA73721118340677002489C3 /* Products */,
+				B3BB9ECD0B6B45A1840A7AB0 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -110,6 +124,7 @@
 				BA73721518340677002489C3 /* CoreGraphics.framework */,
 				BA73721718340677002489C3 /* UIKit.framework */,
 				BA73723818340677002489C3 /* XCTest.framework */,
+				4F85CD59FC9D4FAD83A8BFE2 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -117,14 +132,8 @@
 		BA73721918340677002489C3 /* chanView */ = {
 			isa = PBXGroup;
 			children = (
-				BA73722218340677002489C3 /* AppDelegate.h */,
-				BA73722318340677002489C3 /* AppDelegate.m */,
-				BA73722518340677002489C3 /* Main_iPhone.storyboard */,
-				BA73722818340677002489C3 /* Main_iPad.storyboard */,
-				BA73722B18340677002489C3 /* MasterViewController.h */,
-				BA73722C18340677002489C3 /* MasterViewController.m */,
-				BA73722E18340677002489C3 /* DetailViewController.h */,
-				BA73722F18340677002489C3 /* DetailViewController.m */,
+				BAC897001839824F00715C03 /* GUI */,
+				BA73724E18340801002489C3 /* Models */,
 				BA73723118340677002489C3 /* Images.xcassets */,
 				BA73721A18340677002489C3 /* Supporting Files */,
 			);
@@ -160,6 +169,34 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		BA73724E18340801002489C3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BA73724F183409FD002489C3 /* CVBoard.h */,
+				BA737250183409FD002489C3 /* CVBoard.m */,
+				BA73725218344656002489C3 /* CVThread.h */,
+				BA73725318344656002489C3 /* CVThread.m */,
+				BA740F0E183992A500E30909 /* CVBoardList.h */,
+				BA740F0F183992A500E30909 /* CVBoardList.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		BAC897001839824F00715C03 /* GUI */ = {
+			isa = PBXGroup;
+			children = (
+				BA73722218340677002489C3 /* AppDelegate.h */,
+				BA73722318340677002489C3 /* AppDelegate.m */,
+				BA73722518340677002489C3 /* Main_iPhone.storyboard */,
+				BA73722818340677002489C3 /* Main_iPad.storyboard */,
+				BA73722B18340677002489C3 /* MasterViewController.h */,
+				BA73722C18340677002489C3 /* MasterViewController.m */,
+				BA73722E18340677002489C3 /* DetailViewController.h */,
+				BA73722F18340677002489C3 /* DetailViewController.m */,
+			);
+			name = GUI;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -167,9 +204,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BA73724818340677002489C3 /* Build configuration list for PBXNativeTarget "chanView" */;
 			buildPhases = (
+				2CB01CBB52B445A390BEB933 /* Check Pods Manifest.lock */,
 				BA73720C18340677002489C3 /* Sources */,
 				BA73720D18340677002489C3 /* Frameworks */,
 				BA73720E18340677002489C3 /* Resources */,
+				22278302A8534AAFBEE77AD0 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -253,14 +292,50 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		22278302A8534AAFBEE77AD0 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2CB01CBB52B445A390BEB933 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BA73720C18340677002489C3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				BA73722418340677002489C3 /* AppDelegate.m in Sources */,
+				BA737251183409FD002489C3 /* CVBoard.m in Sources */,
 				BA73722D18340677002489C3 /* MasterViewController.m in Sources */,
 				BA73722018340677002489C3 /* main.m in Sources */,
+				BA740F10183992A500E30909 /* CVBoardList.m in Sources */,
+				BA73725418344656002489C3 /* CVThread.m in Sources */,
 				BA73723018340677002489C3 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -395,6 +470,7 @@
 		};
 		BA73724918340677002489C3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B3BB9ECD0B6B45A1840A7AB0 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -408,6 +484,7 @@
 		};
 		BA73724A18340677002489C3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B3BB9ECD0B6B45A1840A7AB0 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -480,6 +557,7 @@
 				BA73724A18340677002489C3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BA73724B18340677002489C3 /* Build configuration list for PBXNativeTarget "chanViewTests" */ = {
 			isa = XCConfigurationList;
@@ -488,6 +566,7 @@
 				BA73724D18340677002489C3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

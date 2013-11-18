@@ -9,9 +9,13 @@
 #import <UIKit/UIKit.h>
 
 @class DetailViewController;
+@class CVBoardList;
 
 @interface MasterViewController : UITableViewController
 
 @property (strong, nonatomic) DetailViewController *detailViewController;
+
+@property (strong) CVBoardList *boards;
+
 
 @end
