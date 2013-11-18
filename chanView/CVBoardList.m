@@ -34,9 +34,7 @@
          NSArray *boards = [responseObject objectForKey:@"boards"];
          for (int i = 0; i < [boards count]; i++) {
              NSDictionary *board = [boards objectAtIndex:i];
-             NSString *boardURLString = [NSString stringWithFormat: @"http://4chan.org/%@/", [board objectForKey:@"board"]];
-             NSURL *boardURL = [NSURL URLWithString: boardURLString];
-             CVBoard *createdBoard = [[CVBoard alloc ]initWithBoardTitle: [board objectForKey:@"title"] URL:boardURL];
+             CVBoard *createdBoard = [[CVBoard alloc ]initWithBoardTitle: [board objectForKey:@"title"] URL: [board objectForKey:@"board"]];
              [boardList addObject:createdBoard];
          }
      }

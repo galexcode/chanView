@@ -12,10 +12,11 @@
 @interface CVBoard : NSObject
 @property (strong) NSMutableArray *threads;
 @property (strong) NSString *title;
-@property (strong) NSURL *url;
+@property (strong) NSString *url;
 
--(id)initWithBoardTitle:(NSString*)title URL:(NSURL*)url;
+-(id)initWithBoardTitle:(NSString*)theTitle URL:(NSString*)theURL;
 -(NSMutableArray*)getThreads;
+-(NSURL*) getFullURL;
 -(void)addThread:(CVThread*)thread;
 -(NSString*) title;
 

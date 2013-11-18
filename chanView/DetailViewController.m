@@ -45,7 +45,6 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     [self configureView];
-    NSLog(@"%@", self.detailItem);
     [self.boardView loadRequest:[NSURLRequest requestWithURL:self.detailItem]];
 }
 

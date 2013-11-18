@@ -56,7 +56,7 @@
                             <outlet property="delegate" destination="pGg-6v-bdr" id="Y6K-Cp-Qkv"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Master" id="tQt-TN-PWz"/>
+                    <navigationItem key="navigationItem" title="Boards" id="tQt-TN-PWz"/>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="Y7R-ah-6LR">
                         <autoresizingMask key="autoresizingMask"/>
                     </refreshControl>
@@ -89,7 +89,7 @@
                     <navigationItem key="navigationItem" title="Detail" id="cra-N8-TIN"/>
                     <connections>
                         <outlet property="BoardView" destination="3Yd-t4-rID" id="fvi-cW-V6H"/>
-                        <outlet property="boardView" destination="3Yd-t4-rID" id="yT0-9V-lSs"/>
+                        <outlet property="boardView" destination="3Yd-t4-rID" id="NwO-Ei-poo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lrm-kH-fPn" sceneMemberID="firstResponder"/>

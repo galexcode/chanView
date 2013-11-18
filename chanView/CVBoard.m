@@ -17,12 +17,17 @@
 @synthesize title;
 @synthesize url;
 
-- (id)initWithBoardTitle:(NSString*)theTitle URL: (NSURL*)theURL;
+- (id)initWithBoardTitle:(NSString*)theTitle URL: (NSString*) theURL
 {
     self = [super init];
     self.title = theTitle;
     self.url = theURL;
     return self;
+}
+
+- (NSURL*)getFullURL {
+    NSString *boardURLString = [NSString stringWithFormat: @"http://4chan.org/%@/", self.url];
+    return [NSURL URLWithString:boardURLString];
 }
 
 - (void) addThread:(CVThread*)thread {

@@ -78,7 +78,8 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ThreadCell" forIndexPath:indexPath];
 
     CVBoard *board = [[self.boards boardList] objectAtIndex:indexPath.row];
-    cell.textLabel.text = [board title];
+    NSString *cellTitle = [NSString stringWithFormat: @"/%@/: %@", [board url], [board title]];
+    cell.textLabel.text = cellTitle;
     return cell;
 }
 
@@ -117,9 +118,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-        NSURL *object = [[self.boards.boardList objectAtIndex:(NSUInteger)indexPath.row] url];
-        NSLog(@"%@", [object description]);
-        self.detailViewController.detailItem = object;
+        self.detailViewController.detailItem = [[self.boards.boardList objectAtIndex:(NSUInteger)indexPath.row] getFullURL];
+        self.detailViewController.boardView.frame = self.detailViewController.view.bounds;
+        [self.detailViewController.boardView loadRequest: [NSURLRequest requestWithURL: self.detailViewController.detailItem]];
     }
 }
 
@@ -127,8 +128,7 @@
 {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSURL *object = [[self.boards.boardList objectAtIndex:(NSUInteger)indexPath.row] url];
-        NSLog(@"%@", [object description]);
+        NSURL *object = [[self.boards.boardList objectAtIndex:(NSUInteger)indexPath.row] getFullURL];
         [[segue destinationViewController] setDetailItem:object];
     }
 }
